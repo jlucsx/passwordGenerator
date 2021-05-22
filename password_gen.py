@@ -33,3 +33,24 @@ def switchcase_char(uniq_chars_qt):
 			continue
 		sanit_qt_switchcased.append(char)
 	return sanit_qt_switchcased
+
+
+def insert_nums_and_symbs(switchcased_qt):
+	"insert numbers and symbols inside a given quote (list)"
+	num = [str(n) for n in range(0, 10)]
+	symb = ["@", "*", "!", "#", "&", "%", "$"]
+	
+	additions_inserted_qt = switchcased_qt[:9]
+	for i in range(10):
+		if i % 3 == 0:
+			choice = random.choice(symb)
+			additions_inserted_qt.insert(i+1, choice)
+			symb.remove(choice)
+			continue
+		if i % 2 == 0:
+			choice = random.choice(num)
+			additions_inserted_qt.insert(i+2, choice)
+			num.remove(choice)
+			continue
+	
+	return additions_inserted_qt
