@@ -62,7 +62,7 @@ def generate_password():
 	unique_chars_qt = remove_duplicates(quote)
 	switched_chars_qt = switchcase_char(unique_chars_qt)
 	addit_inserted_qt = insert_nums_and_symbs(switched_chars_qt)
-	password = str().join(addit_inserted_qt)
+	password = ''.join(addit_inserted_qt)
 
 	return password
 	
