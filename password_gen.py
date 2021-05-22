@@ -54,3 +54,17 @@ def insert_nums_and_symbs(switchcased_qt):
 			continue
 	
 	return additions_inserted_qt
+
+
+def generate_password():
+	"get the quote and, step-by-step, transform it in a reasonable secure password then return it"
+	quote = get_quote()
+	unique_chars_qt = remove_duplicates(quote)
+	switched_chars_qt = switchcase_char(unique_chars_qt)
+	addit_inserted_qt = insert_nums_and_symbs(switched_chars_qt)
+	password = str().join(addit_inserted_qt)
+
+	return password
+	
+genrtd_pass = generate_password()
+print(genrtd_pass)
