@@ -11,3 +11,14 @@ def get_quote():
 	resp_quote_content = resp_quote["text"]
 
 	return resp_quote_content
+
+
+def remove_duplicates(quote):
+	"remove the duplicate characters inside a given quote then return the result"
+	quote = quote.lower()
+	
+	sanitized_qt = []
+	for char in set(quote):
+		if char.isalpha():
+			sanitized_qt.append(char)
+	return sanitized_qt
